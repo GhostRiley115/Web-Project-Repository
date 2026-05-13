@@ -1,0 +1,30 @@
+-- CRIANDO O BANCO DE DADOS
+
+CREATE DATABASE BDASP;
+
+-- USANDO O BANCO DE DADOS
+
+USE BDASP;
+
+-- CRIANDO AS TABELAS DO BANCO DE DADOS
+
+CREATE TABLE Usuarios(
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR (40) NOT NULL,
+    Email VARCHAR(110) UNIQUE,
+    Senha VARCHAR(250) NOT NULL,
+    Nivel VARCHAR(40) DEFAULT 'Usuario', 
+    DataCadasto DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- INSERINDO O DADOS NO BANCO
+
+INSERT INTO Usuarios(Nome, Email, Senha, Nivel)
+VALUES('Administrador','admin@emial.com','123456', 'Admin');
+
+INSERT INTO Usuarios(Nome, Email, Senha)
+VALUES('Funcionario','usuario@emial.com','123456');
+
+-- CONSULTANDO AS TABELAS DO BANCO 
+
+SELECT * FROM Usuarios;
