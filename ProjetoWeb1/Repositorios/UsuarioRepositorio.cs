@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.Data;
 using MySql.Data.MySqlClient;
+using ProjetoWeb1.Interfaces;
 using ProjetoWeb1.Models;
 
 namespace ProjetoWeb1.Repositorios
 {
     //Classe que implementa a interface IUsuarioRepositorio(contrado de método)
-    public class UsuarioRepositorio(IConfiguration config)
+    public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositorio // herança
     {
         //Variavel privada e somente leitura para armazenar a string de conexão
         private readonly string _connectionString = config.GetConnectionString("Conexao");
