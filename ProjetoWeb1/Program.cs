@@ -26,6 +26,8 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseRouting();
 
+//IMPORTANTE
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

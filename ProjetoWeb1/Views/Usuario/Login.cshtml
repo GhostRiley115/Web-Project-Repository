@@ -1,0 +1,44 @@
+﻿@model ProjetoWeb1.Models.LoginViewModel
+
+@{
+    // Layout = " _Layout";
+    ViewData["Title"] = "Login";
+}
+
+@*centralizar o conteudo da tela*@
+<div>
+    @* definir a largura maxima do container*@
+    <div>
+        @*estrutura que vai receber o form*@
+        <div>
+            @*Estutrura do cabeçalho*@
+            <div>
+                <h3>Login</h3>
+            </div>
+            @* estrutura do formulario*@
+            <div>
+                <form asp-action="Login" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                    <div>
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" placeholder="email@email.com" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Senha"></label>
+                        <input asp-for="Senha" placeholder="Digite sua senha" type="password" />
+                        <span asp-validation-for="Senha"></span>
+                    </div>
+
+                    <div>
+                        <button>Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

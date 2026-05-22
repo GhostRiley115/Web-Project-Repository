@@ -5,7 +5,7 @@ using ProjetoWeb1.Models;
 
 namespace ProjetoWeb1.Repositorios
 {
-    //Classe que implementa a interface IUsuarioRepositorio(contrado de método)
+    //Classe que implementa a interface IUsuarioRepositorio(contrato de método)
     public class UsuarioRepositorio(IConfiguration config) : IUsuarioRepositorio // herança
     {
         //Variavel privada e somente leitura para armazenar a string de conexão
@@ -18,7 +18,7 @@ namespace ProjetoWeb1.Repositorios
             using var conn = new MySqlConnection(_connectionString);
             //Abre a conexão com o banco de dados
             conn.Open();
-            //Define a string do sql usando parametros (@) evita ataques slq injection
+            //Define a string do sql usando parametros (@) evita ataques sql injection
             var sql = "SELECT * FROM Usuarios WHERE Email =@email AND Senha =@senha";
 
             var cmd = new MySqlCommand(sql, conn);
